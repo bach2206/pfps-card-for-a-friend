@@ -14,24 +14,25 @@
 --tertiary-color: rgb(248, 249, 204);
 }
 body{
-    overflow-x: hidden;
+align-items: center;
+background-color: var(--tertiary-color) ;
 }
 .container{
+    flex-grow: 1;
     background-color: var(--tertiary-color) ;
-    max-width: 430px;
-    height: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     margin-top: 1em;
     position: relative;
+    align-items: center;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
     z-index: 1;
-    overflow-x: hidden;
+
+
 }
 .profile{
     height: 22em;
@@ -352,7 +353,7 @@ body{
 
 /* section 4 - Rotation 1 */
 .rotation{
-    width: 100%;
+    width: 300px;
     height: 10em;
     margin-top: 0.3em;
     position: relative;
@@ -386,7 +387,7 @@ top: 6em;
 
 /* section 5 - media */
 .media-grid{
-    width: 100%;
+    width: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -516,7 +517,7 @@ top: 6em;
     justify-content: space-around;
     position: relative;
     right: -1em;
-    bottom: 0;
+    bottom:-20px ;
     transition: box-shadow 500ms ease-out, bottom 500ms ease-out, right 500ms ease-out;
 
 }
@@ -562,10 +563,10 @@ top: 6em;
 }
 
 .arrow5{
-    position: absolute;
+
     bottom: -7em;
-    left: -0.2em;
-    width: 50%;
+    left: -0.6em;
+    width: 150px;
     stroke-width: 1px;
     stroke: black;
     z-index: -1;
@@ -595,8 +596,11 @@ top: 6em;
     transition: filter 500ms ease-out, bottom 500ms ease-out, left 500ms ease-out;
 }
 .box3{
-    width: 9em;
-    position: relative;
+    width: 8em;
+    position: absolute;
+    left: 4.5em;
+    bottom: 135px;
+
 }
 .number-box:hover{
     bottom: -4px;
@@ -606,17 +610,20 @@ top: 6em;
 
 .number-box h4{
     font-size: 0.8em;
-    position: absolute;
     align-self: center;
     margin-left: 0.5em;
     color: black;
+    width: 12em;
+    position: absolute;
+    left: 6.5em;
+    bottom: 150px;
 }
 .arrow6{
     position: absolute;
     z-index: -3;
     width: 9em;
-    top: 1.5em;
-    right: -5.4em;
+    top: -7em;
+    right: -9.0em;
     stroke: black;
 
 }
@@ -645,8 +652,10 @@ top: 6em;
 }
 
 .box4{
-    width: 12em;
-    position: relative;
+    width: 14em;
+    position: absolute;
+    left: .5em;
+    bottom: 135px;
 }
 .email-box:hover{
     bottom: -4px;
@@ -658,8 +667,9 @@ top: 6em;
     font-size: 0.8em;
     position: absolute;
     align-self: center;
-    margin-left: 0.5em;
+    margin-left:5em;
     color: black;
+    bottom: 160px;
 }
  
 /* responsive */
@@ -786,3 +796,52 @@ top: 6em;
 }
 
 } 
+
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container để chứa class1 và class2 */
+.container {
+    display: flex;
+}
+
+/* Class1 */
+.class1 {
+    margin-left: 15%;
+    flex-grow: 3; /* Để các item chiếm không gian đều nhau *
+    flex: 1; /* Chiếm 50% không gian có sẵn */
+    margin-right: -60%; /* Khoảng cách giữa class1 và class2 */
+    padding: 100px; /* Padding cho class1 */
+}
+
+/* Class2 */
+.class2 {
+    flex-grow: 1; /* Để các item chiếm không gian đều nhau *
+    flex: 1; /* Chiếm 50% không gian có sẵn */
+
+    padding: 100px; /* Padding cho class2 */
+}
+
+
+/* Responsive cho máy tính bảng và điện thoại */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Đổi hướng khi màn hình nhỏ */
+
+    }
+    .class1 {
+
+        margin-right: 0px; /* Xóa margin bên phải khi ở chế độ dọc */
+        margin-bottom: 10px; /* Thêm margin dưới cho class1 */
+
+    }
+    .class2 {
+        margin-right: 0; /* Xóa margin bên phải khi ở chế độ dọc */
+        margin-bottom: 10px; /* Thêm margin dưới cho class1 */
+
+    }
+}
